@@ -1,8 +1,17 @@
-import { render, screen } from '@testing-library/react';
+import React from 'react';
 import App from './App';
+import { shallow} from 'enzyme';
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
-});
+describe("Renders", ()=>{
+  it("Renders root component", ()=>{
+    shallow(<App />)
+  })
+})
+
+// it('utilises loading state while data fetching is in progress.', () => {
+//   const AppComponent = shallow(<App />)
+//   AppComponent.setState({isLoading : true})
+//   expect(AppComponent.find(LoadingSpinner).length).toBe(1)
+//   // const linkElement = screen.getByText(/Something went wrong while attempting to fetch data./i);
+//   // expect(linkElement).toBeInTheDocument();
+// });
