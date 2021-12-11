@@ -101,6 +101,16 @@
   text-align: center;
 }
 
+.pageSelector a {
+  padding: 10px;
+  text-decoration: none;
+  color: green;
+}
+
+.pageSelector i {
+  padding: 10px;
+}
+
 input {
   padding: 10px;
   border: none;

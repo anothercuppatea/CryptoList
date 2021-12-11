@@ -8,7 +8,7 @@ function Detail(props) {
             <span className="modalTitle"><p>{props.item.id} details <button className='exit' onClick={props.exitCallback}>X</button> </p> </span>
             <div className="modalContents">
                 <div className="modalProfile">
-                    <img src={props.item.image.small} />
+                    <img src={props.item.image.small} alt={'logo for' + props.item.name} />
                     <h1>{props.item.name}</h1>
                     <i>Platform: {props.item.asset_platform_id}</i>
                 </div>
@@ -22,7 +22,7 @@ function Detail(props) {
                     <div dangerouslySetInnerHTML={{ __html: props.item.description.en }}></div>
 
                     <h5>HomePages </h5>
-                    {props.item.links.homepage.map(i => <a href={i}>{i}</a>)}
+                    {props.item.links.homepage.map(i => <a key={i} href={i}>{i}</a>)}
                     <div className='socialLinks'>
                         <h5>Socials</h5>
                         {props.item.links.twitter_screen_name ? <a href={'https://twitter.com/' + props.item.links.twitter_screen_name}><FontAwesomeIcon style={{ color: 'aqua' }} size='3x' icon={['fab', 'twitter']} /></a> : null}
